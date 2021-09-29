@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.storage.getUser().subscribe((res: any) => {
+    this.storage.getUser('user').subscribe((res: any) => {
       this.user = res ?? {};
       if (Object.keys(this.user).length === 0) {
         return this.router.navigate(['/auth/register']);
